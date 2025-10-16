@@ -1,0 +1,167 @@
+Documentação Completa - Sport Style (HTML + CSS)
+Este documento contém a documentação detalhada do código HTML e do arquivo CSS do projeto 'Sport Style'.
+Documentação do HTML
+Documentação Detalhada do HTML - Sport Style
+===========================================
+
+1. Declaração do tipo de documento e idioma
+------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-br>
+
+- <!DOCTYPE html>: Indica que o documento segue o padrão HTML5, garantindo compatibilidade com navegadores modernos.
+- <html lang="pt-br">: Define o idioma principal como Português (Brasil), importante para leitores de tela e mecanismos de busca (SEO).
+
+2. Cabeçalho do documento (head)
+-------------------------------
+<meta charset="UTF-8">: Suporte a caracteres acentuados e emojis.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Responsividade em dispositivos móveis.
+<title>: Título mostrado na aba do navegador e usado por mecanismos de busca.
+<link rel="stylesheet" href="style.css">: Importa o CSS externo, separando conteúdo e estilo.
+
+3. Cabeçalho visual da página (header)
+-------------------------------------
+<header> e <h1>: Elemento semântico para o cabeçalho e título principal.
+Observação: substituir atributos inline (align) por CSS para melhores práticas.
+
+4. Conteúdo principal (main)
+----------------------------
+<main>: Contém o conteúdo principal da página, útil para navegação por leitores de tela.
+
+5. Seção de listas (section id="listas")
+----------------------------------------
+<section id="listas">: Bloco temático com categorias de produtos.
+<ul> e <li>: Listas aninhadas para mostrar relações entre categorias e subcategorias.
+<h2>: Subtítulo de seção respeitando a hierarquia semântica.
+
+6. Lista ordenada dos mais vendidos
+-----------------------------------
+<ol>: Usada para indicar ordenação (1º, 2º, 3º).
+
+7. Tabela de vendas (section id="tabelas")
+-------------------------------------------
+<table> com <thead>, <tbody>, <tfoot>: Estrutura semântica para dados tabulares.
+<th>: Cabeçalhos de coluna que melhoram acessibilidade.
+<td>: Células de dados, imagens com atributo alt para acessibilidade.
+<tfoot> e colspan para observações gerais (ex.: "Preços atualizados em ...").
+
+8. Rodapé (footer)
+------------------
+<footer> com <h3>: Créditos e informações finais.
+Uso de entidade &copy; para símbolo de copyright.
+
+Boas práticas de acessibilidade aplicadas
+-----------------------------------------
+- Uso de tags semânticas (header, main, section, footer)
+- Atributos alt em imagens
+- Hierarquia correta de títulos (h1 → h2 → h3)
+- Uso de listas para agrupamento lógico
+- Separação de HTML e CSS
+- Uso de thead/tbody/tfoot em tabelas
+Documentação do CSS
+Documentação Detalhada do CSS - Sport Style
+==========================================
+
+Objetivo geral:
+---------------
+O CSS apresentado estiliza a estrutura do catálogo (listas, tabela e rodapé), priorizando legibilidade, contraste e uma aparência profissional e coesa.
+
+Regras e explicação por bloco
+----------------------------
+
+/* Seleto universal */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+- Aplica a família de fontes a todo o documento.
+
+/* Rodapé */
+footer {
+    color: aliceblue;
+    background-color: black;
+    border: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+- Define contraste forte (texto claro sobre fundo escuro) para legibilidade.
+- height fixa: garante aparência consistente, mas atenção a conteúdo que ultrapasse altura.
+
+/* Estilo geral das listas */
+#listas {
+    background-color: #f4f7fa;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+- Container centralizado que destaca a área de categorias usando borda, raio e sombra leve para profundidade visual.
+- width em %: responsivo; combinar com max-width para evitar larguras excessivas em telas grandes.
+
+/* Título da seção */
+#listas h2 {
+    text-align: center;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+- Destaque do título com cor e separador visual.
+
+/* Listas principais (categorias) */
+#listas>ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#listas>ul>li {
+    background-color: #e0f0ff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+}
+- Remove bullets principais e cria blocos visuais para cada categoria, melhorando foco e escaneabilidade.
+
+/* Sublistas (subcategorias) */
+#listas ul ul {
+    list-style: disc;
+    margin-top: 5px;
+    padding-left: 30px;
+    font-weight: normal;
+    color: #333;
+}
+- Mantém indicação visual de subitens com marcação e recuo apropriado para hierarquia.
+
+#listas ol li {
+    list-style-position: inside;
+    font-size: large;
+    font-weight: 500;
+    text-decoration: middle;
+}
+/* Efeito hover */
+#listas li:hover {
+    background-color: #cce5ff;
+    transition: 0.3s;
+}
+- Fornece feedback visual ao foco do mouse, melhorando interação.
+- Recomendação: adicionar outline focus para acessibilidade via teclado.
+
+#tabelas {
+    border: 3px dotted #0056b3;
+    padding: 10px;
+    border-radius: 10px;
+}
+- Container com borda pontilhada que destaca a área da tabela.
+
+#tabelas table {
+    text-align: center;
+}
+- Centraliza o conteúdo da tabela para leitura conforme o design.
+
+#tabelas table td:hover {
+    background-color: rgb(0, 55, 255);
+    color: aliceblue;
+    transition: 0.5s;
+}
+- Efeito de destaque nas células ao passar o mouse para facilitar foco visual em linhas específicas.
